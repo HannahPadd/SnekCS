@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Security;
 
 namespace SnekCS
@@ -8,15 +9,29 @@ namespace SnekCS
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.Gray;
             bool isRunning = true;
             int snekX = 1;
             int snekY = 1;
             int snekXrel = 0;
             int snekYrel = 0;
-            int playingFieldX = 26;
-            int playingFieldY = 8;
+            int playingFieldX = 60;
+            int playingFieldY = 30;
+            string playingField = "";
+            char wall = '#';
+            char tile = '-';
 
-
+            for (int i = 0; i < playingFieldY; i++)
+            {
+                if (i == 0 || i == playingFieldY - 1)
+                {
+                    playingField += $"{(new string(wall, playingFieldX))}{"\n"}";
+                }
+                else
+                {
+                    playingField += $"{wall}{new string(tile, playingFieldX - 2)}{wall}{"\n"}";
+                }
+            }
             //Game Loop
             while (isRunning)
             {
@@ -24,15 +39,8 @@ namespace SnekCS
                 //checks to see if the snek's position is inside the window.
 
                 //Creates the frame
-                Console.Clear();
-                Console.WriteLine("##########################");
-                Console.WriteLine("#------------------------#");
-                Console.WriteLine("#------------------------#");
-                Console.WriteLine("#------------------------#");
-                Console.WriteLine("#------------------------#");
-                Console.WriteLine("#------------------------#");
-                Console.WriteLine("#------------------------#");
-                Console.WriteLine("##########################");
+                Console.Clear();               
+                Console.WriteLine(playingField);
 
                 Console.SetCursorPosition(snekX, snekY);
 
