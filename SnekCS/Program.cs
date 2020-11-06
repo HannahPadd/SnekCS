@@ -21,6 +21,7 @@ namespace SnekCS
             char wall = '#';
             char tile = '-';
 
+            //Creates the string that will print the battlefield
             for (int i = 0; i < playingFieldY; i++)
             {
                 if (i == 0 || i == playingFieldY - 1)
@@ -41,9 +42,7 @@ namespace SnekCS
                 //Creates the frame
                 Console.Clear();               
                 Console.WriteLine(playingField);
-
                 Console.SetCursorPosition(snekX, snekY);
-
                 Console.WriteLine("*");
 
                 //Read the key that has been pressed
