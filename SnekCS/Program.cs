@@ -15,13 +15,13 @@ namespace SnekCS
             int snekY = 1;
             int snekXrel = 0;
             int snekYrel = 0;
-            int playingFieldX = 60;
-            int playingFieldY = 30;
+            int playingFieldX = 120;
+            int playingFieldY = 28;
             string playingField = "";
             char wall = '#';
             char tile = '-';
 
-            //Creates the string that will print the battlefield
+            //Creates the string that will print the playfield
             for (int i = 0; i < playingFieldY; i++)
             {
                 if (i == 0 || i == playingFieldY - 1)
@@ -36,8 +36,6 @@ namespace SnekCS
             //Game Loop
             while (isRunning)
             {
-
-                //checks to see if the snek's position is inside the window.
 
                 //Creates the frame
                 Console.Clear();               
