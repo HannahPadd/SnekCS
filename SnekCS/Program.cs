@@ -18,6 +18,29 @@ namespace SnekCS
             int playingFieldX = 120;
             int playingFieldY = 28;
             string playingField = "";
+            
+            //Asks for user input to set the size of the playingfield
+            try
+            {
+                Console.WriteLine("X dimension of playingField:> ");
+                playingFieldX = Convert.ToInt32(Console.ReadLine());
+            }
+
+            catch
+            {
+                Console.WriteLine("You can only enter a number, X dimension set to default");
+            }
+            try
+            {
+                Console.WriteLine("Y dimension of playingField:> ");
+                playingFieldY = Convert.ToInt32(Console.ReadLine());
+            }
+
+            catch
+            {
+                Console.WriteLine("YOu can only enter a number, Y dimension set to default");
+            }
+
             char wall = '#';
             char tile = '-';
 
